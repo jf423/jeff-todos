@@ -12,20 +12,19 @@ export class TodoList extends Component{
 	componentWillUnMount() {
 	}
 	render() {
-		// var displayItems = this.props.items.map(function(items) {
-  //           return (<li key={items.id}>{items.data}</li>);
-  //           // return (<TodoItem key={items.id}>{items.data}</TodoItem>);
-  //       }); 
-		// return (
-		// 	<div>
-		// 		<ul>
-		// 			{displayItems}
-		// 		</ul>
-		// 	</div>
-		// );
-		 var createItem = function(items) {
-		      return <li key={items.id}>{items.text}</li>;
-		    };
-		    return <ul>{this.props.items.map(createItem)}</ul>;
+		var displayItems = this.props.items.map(function(items) {
+            return (<TodoItem key={items.id}>{items.text}</TodoItem>);
+        }); 
+		return (
+			<div className="text-left">
+				<ul>
+					{displayItems}
+				</ul>
+			</div>
+		);
+		 // var createItem = function(items) {
+		 //      return <TodoItem key={items.id}>{items.text}</TodoItem>;
+		 //    };
+		 //    return <ul>{this.props.items.map(createItem)}</ul>;
 	}
 }

@@ -15,9 +15,11 @@ export class TodoItem extends Component{
 	render() {
 		return (
 			<div>
-				<li key={this.props.key}>
+				<h4>
+				<li key={this.props.id}>
 					{this.props.children}
 				</li>
+				</h4>
 			</div>
 		);
 	}

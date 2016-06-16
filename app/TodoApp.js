@@ -20,7 +20,9 @@ export class TodoApp extends Component{
 	}
 	handleSubmit(e){
 		e.preventDefault();
-	    var nextItems = this.state.items.concat([{text: this.state.text, id: Date.now()}]);
+	    var nextItems = this.state.items.concat([
+	    {text: this.state.text, id: Date.now()}
+	    ]);
 	    var nextText = '';
 	    this.setState({items: nextItems, text: nextText});
 	}
@@ -31,10 +33,12 @@ export class TodoApp extends Component{
 	}
 	render() {
 		return (
-			<div>
+			<div className="container text-center ">
 				<h1>Jeff's TodoApp</h1>
 				<form onSubmit={this.handleSubmit}>
-					<input onChange={this.onChange} value={this.state.text} />
+					<div className="form-group">
+						<input className="form-control col-sm-6 col-sm-offset-3" onChange={this.onChange} value={this.state.text} />
+					</div>
 				</form>
 				<TodoList items={this.state.items} />
 			</div>
