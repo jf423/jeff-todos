@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {TodoApp} from '../app/TodoApp.js';
 
-class HelloWorld extends React.Component{
-	render() {
-		return (
-			<div>Hello Word</div>
-		);
-	}
-};
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+
+
+ReactDOM.render(<TodoApp />, document.getElementById('app'));
