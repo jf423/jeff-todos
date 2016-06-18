@@ -5,9 +5,15 @@ export class TodoApp extends Component{
 	constructor(props,context){
 		super(props,context);
 
+		if (localStorage.todo) {
+			var  storage = JSON.parse(localStorage.todo);
+		}else{
+			var  storage = [];
+		}
+
 		this.state = {
 			text: '',
-			items: []
+			items: storage
 		};
 		this.onChange = this.onChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,11 +24,13 @@ export class TodoApp extends Component{
 	componentWillUnMount() {
 
 	}
+
 	handleSubmit(e){
 		e.preventDefault();
 	    var nextItems = this.state.items.concat([
 	    {text: this.state.text, id: Date.now()}
 	    ]);
+	    localStorage["todo"] = JSON.stringify(nextItems);
 	    var nextText = '';
 	    this.setState({items: nextItems, text: nextText});
 	}
