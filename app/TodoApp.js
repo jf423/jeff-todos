@@ -37,7 +37,7 @@ export class TodoApp extends Component{
 				<h1>Jeff's TodoApp</h1>
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group">
-						<input className="form-control col-sm-6 col-sm-offset-3" onChange={this.onChange} value={this.state.text} />
+						<input className="form-control" onChange={this.onChange} value={this.state.text} />
 					</div>
 				</form>
 				<TodoList items={this.state.items} />
