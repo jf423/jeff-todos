@@ -17,6 +17,7 @@ export class TodoApp extends Component{
 		};
 		this.onChange = this.onChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleDelete = this.handleDelete.bind(this);
 	}
 	componentDidMount() {
 
@@ -24,7 +25,10 @@ export class TodoApp extends Component{
 	componentWillUnMount() {
 
 	}
-
+	handleDelete(e){
+		e.preventDefault();
+		console.log("delete");
+	}
 	handleSubmit(e){
 		e.preventDefault();
 	    var nextItems = this.state.items.concat([
@@ -34,6 +38,7 @@ export class TodoApp extends Component{
 	    var nextText = '';
 	    this.setState({items: nextItems, text: nextText});
 	}
+	
 	onChange(e){
 		this.setState({
 			text: e.target.value
@@ -48,7 +53,7 @@ export class TodoApp extends Component{
 						<input className="form-control" onChange={this.onChange} value={this.state.text} />
 					</div>
 				</form>
-				<TodoList items={this.state.items} />
+				<TodoList handleDelete={this.handleDelete} items={this.state.items} />
 			</div>
 		);
 	}

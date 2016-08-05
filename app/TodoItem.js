@@ -12,12 +12,14 @@ export class TodoItem extends Component{
 	}
 	componentWillUnMount() {
 	}
+
 	render() {
 		return (
 			<div>
 				<h4>
 				<li key={this.props.id}>
 					{this.props.children}
+					<a href='#' onClick={this.handleDelete}> delete</a>
 				</li>
 				</h4>
 			</div>
