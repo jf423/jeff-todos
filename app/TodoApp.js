@@ -17,17 +17,13 @@ export class TodoApp extends Component{
 		};
 		this.onChange = this.onChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleDelete = this.handleDelete.bind(this);
+		// this.handleDelete = this.handleDelete.bind(this);
 	}
 	componentDidMount() {
 
 	}
 	componentWillUnMount() {
 
-	}
-	handleDelete(e){
-		e.preventDefault();
-		console.log("delete");
 	}
 	handleSubmit(e){
 		e.preventDefault();
@@ -53,7 +49,7 @@ export class TodoApp extends Component{
 						<input className="form-control" onChange={this.onChange} value={this.state.text} />
 					</div>
 				</form>
-				<TodoList handleDelete={this.handleDelete} items={this.state.items} />
+				<TodoList items={this.state.items} />
 			</div>
 		);
 	}

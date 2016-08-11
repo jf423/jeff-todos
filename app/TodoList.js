@@ -13,7 +13,7 @@ export class TodoList extends Component{
 	
 	render() {
 		var displayItems = this.props.items.map(function(items) {
-            return (<TodoItem handleDelete={this.props.handleDelete} key={items.id}>{items.text}</TodoItem>);
+            return (<TodoItem key={items.id}>{items.text}</TodoItem>);
         });
 		return (
 			<div className="text-left">
